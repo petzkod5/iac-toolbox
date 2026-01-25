@@ -5,6 +5,8 @@
     home.homeDirectory = lib.mkForce "/home/petzko";
     home.enableNixpkgsReleaseCheck = false;
     home.stateVersion = "25.05";
+    
+    fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
         go
@@ -14,7 +16,26 @@
         pre-commit
         trufflehog
         wget
-	    neovim
+
+        # NVIM Dependencies
+        ripgrep
+        lazygit
+        gdu
+        bottom
+        
+        # LSP Dependencies
+        stylua
+        selene
+        ruff
+        nixd
+        deadnix
+        rustup
+        tree-sitter
+        nodejs_24
+        python313
+        
+        # Fonts (For NVIM)
+        nerd-fonts.fira-code
     ];
 
     programs.home-manager.enable = true;
@@ -27,6 +48,28 @@
           set sw=4
           set ts=4
           set number relativenumber
-        ''
-    }
+        '';
+    };
+
+    programs.zsh = {
+        enable = true;
+
+        oh-my-zsh = {
+            enable = true;
+            theme = "robbyrussell";
+            plugins = [
+                "git"
+                "docker"
+                "sudo"
+                "command-not-found"
+                "kubectl"
+                "python"
+                "history"
+                "dirhistory"
+                "colored-man-pages"
+            ];
+        };
+
+        initExtra = builtins.readFile ./dotfiles/zshrc.common;
+    };
 }

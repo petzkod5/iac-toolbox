@@ -27,13 +27,14 @@
 
 
                 ({ config, pkgs, ... }: {
+                    programs.zsh.enable = true;
+
                     users.users.petzko = {
                         isNormalUser = true;
                         home = "/home/petzko";
                         extraGroups = [ "wheel" ];
                         hashedPassword = "";
-                        #shell = pkgs.zsh;
-
+                        shell = pkgs.zsh;
                     };
                 })
 

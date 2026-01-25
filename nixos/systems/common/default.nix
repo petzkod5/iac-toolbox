@@ -5,6 +5,7 @@
         vim
         git
         just
+        unzip
     ];
 
 
