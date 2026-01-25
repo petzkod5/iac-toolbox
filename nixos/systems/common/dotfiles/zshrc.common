@@ -1,3 +1,31 @@
-if [[ -d ~/.config/astrovim ]]; then
-  export NVIM_APPNAME=astrovim
+function is_command(){
+    local cmd="$1"
+
+    if command -v $cmd &>/dev/null; then
+        return 0
+    fi
+
+    return 1
+}
+
+export EDITOR=vim
+
+if is_command nvim; then
+    alias vim=nvim
+
+    if [[ -d ~/.config/astrovim ]]; then
+        export NVIM_APPNAME=astrovim
+    fi
 fi
+
+if is_command lazygit; then
+    alias lg=lazygit
+fi
+
+if is_command rg; then
+    alias grep=rg
+    alias bin_grep=/bin/grep
+fi
+
+unset is_command
+

@@ -18,10 +18,14 @@
         isengard = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
                 
+            specialArgs = {
+                hostname = "isengard";
+            };
+
             modules = [
-                
-                ({ config, pkgs, ...}: {
-                    networking.hostName = "isengard";
+
+                ({ config, pkgs, hostname, ...}: {
+                    networking.hostName = hostname;
                     system.stateVersion = "25.05";
                 })
 
@@ -42,6 +46,8 @@
                 { programs.nix-ld.dev.enable = true; }
 
                 ./systems/common
+                ./systems/isengard
+
 
                 home-manager.nixosModules.home-manager
                 {

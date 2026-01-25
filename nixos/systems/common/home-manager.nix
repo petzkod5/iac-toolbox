@@ -70,6 +70,6 @@
             ];
         };
 
-        initExtra = builtins.readFile ./dotfiles/zshrc.common;
+        initContent = builtins.readFile ./dotfiles/zshrc.common;
     };
 }

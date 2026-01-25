@@ -1,0 +1,3 @@
+if systemctl is-active --quiet k3s && [[ -f /etc/rancher/k3s/k3s.yaml ]]; then
+  export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+fi
