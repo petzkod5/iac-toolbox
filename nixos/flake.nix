@@ -46,7 +46,7 @@
                 {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
-                    home-manager.users.petzko = import ./nix/systems/common/home-manager.nix;
+                    home-manager.users.petzko = import ./systems/common/home-manager.nix;
                 }
 
 
