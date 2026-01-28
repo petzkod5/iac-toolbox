@@ -31,6 +31,8 @@
         deadnix
         rustup
         tree-sitter
+        gcc
+        gnumake
         nodejs_24
         python313
         
