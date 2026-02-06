@@ -1,0 +1,11 @@
+# Ubuntu Nix Configuration
+
+This contains some Nix#home-manager configurations for Ubuntu. This is strictly just for my own home-area
+and system package management.
+
+## Configurations
+
+- 'base' - the basic configuration - all other configs should use this as a starting point and go from there
+
+
+
