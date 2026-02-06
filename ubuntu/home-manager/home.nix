@@ -172,7 +172,7 @@ in {
                     set msg    $(curl https://whatthecommit.com/index.txt)
                     set status $(git status)
                     git add --all
-                    git commit -m $msg -m $status
+                    git commit -m "$msg" -m "$status"
                     git push
                 end
                 '';
