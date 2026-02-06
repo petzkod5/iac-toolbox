@@ -140,6 +140,7 @@ in {
                 "gfl"   = "git fetch && git pull";
 
                 "rbh" = "rebuild-home";
+                "rbh-yolo" = "rebuild-home && yologcm";
             };
 
 
@@ -159,7 +160,8 @@ in {
                 rebuild-home = ''
                 function rebuild-home
                     NH_FLAKE=${flake-path} nh home build -v -t -c base && \
-                    NH_FLAKE=${flake-path} nh home switch -v -t -c base
+                    NH_FLAKE=${flake-path} nh home switch -v -t -c base && \
+                    exec fish
                 end
                 '';
 
@@ -167,6 +169,7 @@ in {
                 function yologcm
                     set msg    $(curl https://whatthecommit.com/index.txt)
                     set status $(git status)
+                    git add --all
                     git commit -m $msg -m $status
                     git push
                 end
