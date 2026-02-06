@@ -152,6 +152,8 @@ in {
                 gl  = "git pull";
                 gc  = "git commit";
                 gcm = "git commit -m";
+
+                lg  = "lazygit";
             };
             
 
