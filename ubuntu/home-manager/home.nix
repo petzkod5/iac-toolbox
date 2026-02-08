@@ -25,7 +25,12 @@ in {
         MANPAGER = "nvim +Man!";
 	    NVIM_APPNAME = "astrovim";
     };
+    
 
+    home.sessionPath = [
+        "$HOME/.nix-profile/bin"
+        "/nix/var/nix/profiles/default/bin/"
+    ];
 
     # -----------------------------------------------------------
     # BASIC PACKAGE INSTALLS
