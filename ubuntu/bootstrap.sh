@@ -43,3 +43,14 @@ if ! command -v home-manager &>/dev/null; then
 else
 	home-manager switch --flake ./#$CONFIGURATION || exit 1
 fi
+
+# Set Default Shell
+# fish_shell=/home/$USER/.nix-profile/bin/fish
+# if ! grep -q $fish_shell; then
+# 	sudo echo "$fish_shell" >> /etc/shells
+# fi
+#
+# if ! grep -q "fish" <<< $SHELL; then
+# 	chsh -s $fish_shell || echo "WARNING: Couldn't set default shell to fish"
+# fi
+
